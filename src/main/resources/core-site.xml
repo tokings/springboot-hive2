@@ -1,0 +1,220 @@
+  <configuration>
+    
+    <property>
+      <name>fs.defaultFS</name>
+      <value>hdfs://master.embracesource.com:8020</value>
+      <final>true</final>
+    </property>
+    
+    <property>
+      <name>fs.trash.interval</name>
+      <value>360</value>
+    </property>
+    
+    <property>
+      <name>ha.failover-controller.active-standby-elector.zk.op.retries</name>
+      <value>120</value>
+    </property>
+    
+    <property>
+      <name>ha.zookeeper.acl</name>
+      <value>sasl:nn:rwcda</value>
+    </property>
+    
+    <property>
+      <name>hadoop.http.authentication.simple.anonymous.allowed</name>
+      <value>true</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.ambari-server-xyhdp.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.ambari-server-xyhdp.hosts</name>
+      <value>master.embracesource.com</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hcat.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hcat.hosts</name>
+      <value>master.embracesource.com</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hdfs.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hdfs.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hive.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hive.hosts</name>
+      <value>master.embracesource.com</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.HTTP.groups</name>
+      <value>users</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.HTTP.hosts</name>
+      <value>master.embracesource.com</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hue.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.hue.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.livy.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.livy.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.oozie.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.oozie.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.yarn.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.yarn.hosts</name>
+      <value>master.embracesource.com</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.zeppelin-xyhdp.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.zeppelin-xyhdp.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.zeppelin.groups</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.proxyuser.zeppelin.hosts</name>
+      <value>*</value>
+    </property>
+    
+    <property>
+      <name>hadoop.security.auth_to_local</name>
+      <value>RULE:[1:$1@$0](ambari-qa-xyhdp@EXAMPLE.COM)s/.*/ambari-qa/
+RULE:[1:$1@$0](hbase-xyhdp@EXAMPLE.COM)s/.*/hbase/
+RULE:[1:$1@$0](hdfs-xyhdp@EXAMPLE.COM)s/.*/hdfs/
+RULE:[1:$1@$0](spark-xyhdp@EXAMPLE.COM)s/.*/spark/
+RULE:[1:$1@$0](zeppelin-xyhdp@EXAMPLE.COM)s/.*/zeppelin/
+RULE:[1:$1@$0](.*@EXAMPLE.COM)s/@.*//
+RULE:[2:$1@$0](activity_analyzer@EXAMPLE.COM)s/.*/activity_analyzer/
+RULE:[2:$1@$0](activity_explorer@EXAMPLE.COM)s/.*/activity_explorer/
+RULE:[2:$1@$0](amshbase@EXAMPLE.COM)s/.*/ams/
+RULE:[2:$1@$0](amszk@EXAMPLE.COM)s/.*/ams/
+RULE:[2:$1@$0](atlas@EXAMPLE.COM)s/.*/atlas/
+RULE:[2:$1@$0](dn@EXAMPLE.COM)s/.*/hdfs/
+RULE:[2:$1@$0](hbase@EXAMPLE.COM)s/.*/hbase/
+RULE:[2:$1@$0](hive@EXAMPLE.COM)s/.*/hive/
+RULE:[2:$1@$0](jhs@EXAMPLE.COM)s/.*/mapred/
+RULE:[2:$1@$0](livy@EXAMPLE.COM)s/.*/livy/
+RULE:[2:$1@$0](nm@EXAMPLE.COM)s/.*/yarn/
+RULE:[2:$1@$0](nn@EXAMPLE.COM)s/.*/hdfs/
+RULE:[2:$1@$0](oozie@EXAMPLE.COM)s/.*/oozie/
+RULE:[2:$1@$0](rm@EXAMPLE.COM)s/.*/yarn/
+RULE:[2:$1@$0](yarn@EXAMPLE.COM)s/.*/yarn/
+DEFAULT</value>
+    </property>
+    
+    <property>
+      <name>hadoop.security.authentication</name>
+      <value>kerberos</value>
+    </property>
+    
+    <property>
+      <name>hadoop.security.authorization</name>
+      <value>true</value>
+    </property>
+    
+    <property>
+      <name>io.compression.codecs</name>
+      <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec</value>
+    </property>
+    
+    <property>
+      <name>io.file.buffer.size</name>
+      <value>131072</value>
+    </property>
+    
+    <property>
+      <name>io.serializations</name>
+      <value>org.apache.hadoop.io.serializer.WritableSerialization</value>
+    </property>
+    
+    <property>
+      <name>ipc.client.connect.max.retries</name>
+      <value>50</value>
+    </property>
+    
+    <property>
+      <name>ipc.client.connection.maxidletime</name>
+      <value>30000</value>
+    </property>
+    
+    <property>
+      <name>ipc.client.idlethreshold</name>
+      <value>8000</value>
+    </property>
+    
+    <property>
+      <name>ipc.server.tcpnodelay</name>
+      <value>true</value>
+    </property>
+    
+    <property>
+      <name>mapreduce.jobtracker.webinterface.trusted</name>
+      <value>false</value>
+    </property>
+    
+    <property>
+      <name>net.topology.script.file.name</name>
+      <value>/etc/hadoop/conf/topology_script.py</value>
+    </property>
+    
+  </configuration>

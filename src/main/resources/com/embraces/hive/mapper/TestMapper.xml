@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.embraces.hive.mapper.TestMapper">
+
+	<!-- 映射不成功，因为结果集的列头携带表名信息，如：test.a映射到Test的a属性将报错。所以select需要指定具体的列名或者指定别名 -->
+	<select id="listByRowkey" resultType="com.embraces.hive.model.Test">
+		SELECT * FROM test WHERE
+		a=#{rowkey}
+	</select>
+
+	<select id="listByRowkey2" resultType="com.embraces.hive.model.Test">
+		SELECT a FROM test WHERE
+		a=#{rowkey}
+	</select>
+
+	<!-- 映射不成功，因为结果集的列头携带表名信息，如：test.a映射到Test的a属性将报错。所以select需要指定具体的列名或者指定别名 -->
+	<select id="listByRowkeys" resultType="com.embraces.hive.model.Test">
+		SELECT * FROM test WHERE a in
+		<foreach item="rowkey" index="index" collection="list" open="("
+			separator="," close=")">
+			#{rowkey}
+		</foreach>
+	</select>
+	
+	<select id="listByRowkeys2" resultType="com.embraces.hive.model.Test">
+		SELECT a FROM test WHERE a in
+		<foreach item="rowkey" index="index" collection="list" open="("
+			separator="," close=")">
+			#{rowkey}
+		</foreach>
+	</select>
+
+</mapper>
